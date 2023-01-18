@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Our node to control the drone -->
+  <!-- SERVO_MAX and SERVO_MIN are used to clip the values -->
+  <param name='/SERVO_MIN' value='1000'/>
+  <param name='/SERVO_MAX' value='2000'/>
+  <param name='/SERVO_CENTER' value='1500'/>
+  <param name='/SERVO_RANGE' value='500'/>
+  <param name='/SERVO_TRIM' value='0'/>
+  <param name='/SERVO_P' value='1.0'/>
+  <param name='/SERVO_I' value='0.0'/>
+  <param name='/SERVO_IMAX' value='0.0'/>
+  <param name='/SERVO_D' value='0.0'/>
+  <param name='/SERVO_PID_LEN' value='5'/>
+
+  <node pkg="silvara" type="silvara.py" name="silvara" required="true" output="screen" />
+</launch>

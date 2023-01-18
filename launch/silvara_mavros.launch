@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- launch mavros -->
+  <arg name="fcu_url" default="/dev/ttyACM0" />
+  <include file="$(find mavros)/launch/apm.launch">
+    <!-- this must match the UP port-baud rate connected to Pixhawk -->
+    <arg name="fcu_url" value="$(arg fcu_url)" />
+  </include>
+  <!-- Our node to control the drone -->
+  <!-- SERVO_MAX and SERVO_MIN are used to clip the values -->
+  <param name='/SERVO_MIN' value='1000'/>
+  <param name='/SERVO_MAX' value='2000'/>
+  <param name='/SERVO_CENTER' value='1500'/>
+  <param name='/SERVO_RANGE' value='500'/>
+  <param name='/SERVO_TRIM' value='0'/>
+  <param name='/SERVO_P' value='-2.0'/>
+  <param name='/SERVO_I' value='0.0'/>
+  <param name='/SERVO_IMAX' value='0.0'/>
+  <param name='/SERVO_D' value='0.0'/>
+  <param name='/SERVO_PID_LEN' value='5'/>
+
+  <node pkg="silvara" type="silvara.py" name="offboard" required="true" output="screen" />
+</launch>
