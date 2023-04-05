@@ -19,5 +19,19 @@
   <param name='/SERVO_D' value='0.0'/>
   <param name='/SERVO_PID_LEN' value='5'/>
 
+  <param name='/THROTTLE_MIN' value='1000'/>
+  <param name='/THROTTLE_MAX' value='2000'/>
+  <param name='/THROTTLE_GOV' value='1100'/>
+  <param name='/THROTTLE_CENTER' value='1500'/>
+  <param name='/THROTTLE_RANGE' value='500'/>
+  <param name='/THROTTLE_TRIM' value='0'/>
+  <param name='/THROTTLE_P' value='0.1'/>
+  <param name='/THROTTLE_I' value='0.0'/>
+  <param name='/THROTTLE_IMAX' value='0.0'/>
+  <param name='/THROTTLE_D' value='0.0'/>
+  <param name='/THROTTLE_PID_LEN' value='5'/>
+  <param name='/MIN_OBJECT_AREA' value='400'/>
+  <param name='/COLOR_CONFIDENCE' value='0.9'/>
+
   <node pkg="silvara" type="silvara.py" name="offboard" required="true" output="screen" />
 </launch>
